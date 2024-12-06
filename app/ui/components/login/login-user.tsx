@@ -1,13 +1,10 @@
-import { Inter } from 'next/font/google'
 import { User, LockKeyhole } from 'lucide-react'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function LoginUser() {
 	return (
 		<div className='bg-white rounded-lg p-4 h-96 w-96 flex flex-col items-center'>
 			<h1
-				className={`${inter.className} text-2xl mt-4 border-b-2 border-blue-400 w-[80%] text-center pb-4`}
+				className={`text-2xl mt-4 border-b-2 border-blue-400 w-[80%] text-center pb-4`}
 			>
 				Inicia sesíon
 			</h1>
@@ -32,7 +29,7 @@ export default function LoginUser() {
 			</div>
 
 			<button
-				className={`${inter.className} bg-blue-400 text-white p-2 rounded-md w-[80%] mt-10 flex justify-center relative hover:bg-blue-600 transition-colors duration-200`}
+				className={` bg-blue-400 text-white p-2 rounded-md w-[80%] mt-10 flex justify-center relative hover:bg-blue-600 transition-colors duration-200`}
 			>
 				Iniciar sesión
 			</button>

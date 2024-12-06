@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@midudev/tailwind-animations':
+        specifier: ^0.1.0
+        version: 0.1.0(tailwindcss@3.4.16)
       lucide-react:
         specifier: ^0.468.0
         version: 0.468.0(react@19.0.0-rc-66855b96-20241106)
@@ -215,6 +218,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@midudev/tailwind-animations@0.1.0':
+    resolution: {integrity: sha512-Xedqc4uNo56x8snhM5dDHvIc+hahQ2jQhciBg9PF+sET1mJJFCvzglu9vzX/KkgN1qepG4vsUcYPnxf3H7ndyw==}
+    peerDependencies:
+      tailwindcss: ^3.0.0
 
   '@next/env@15.0.3':
     resolution: {integrity: sha512-t9Xy32pjNOvVn2AS+Utt6VmyrshbpfUMhIjFO60gI58deSo/KgLOp31XZ4O+kY/Is8WAGYwA5gR7kOb1eORDBA==}
@@ -1809,6 +1817,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@midudev/tailwind-animations@0.1.0(tailwindcss@3.4.16)':
+    dependencies:
+      tailwindcss: 3.4.16
 
   '@next/env@15.0.3': {}
 
