@@ -1,30 +1,28 @@
-import { getUnidades } from '@/lib/db/actions'
-import Unit from './unit'
+'use client'
 
-export async function GridUnits() {
-	const unidades = await getUnidades()
-	const filterUnits = (unit: string) => {
-		return unidades.filter(unidad => unidad.tipo === unit)
-	}
-	const units = {
-		pumps: filterUnits('ENGINE'),
-		rescuepumps: filterUnits('ENGINE&RESCUE'),
-		rescue: filterUnits('RESCUE'),
-		hazmat: filterUnits('HAZMAT'),
-		tanker: filterUnits('TANKER'),
-		tank: filterUnits('TANK')
+import Unit from './unit'
+import { useUnits } from '@/lib/utils/hooks/useUnits'
+import { Units, Vehicle } from '@/lib/types'
+import LoadingBar from '@/app/ui/components/reusable/loading-bar'
+
+export function GridUnits() {
+	const { units, loading } = useUnits() as { units: Units; loading: boolean }
+
+	if (loading) {
+		return <LoadingBar />
 	}
 
 	return (
-		<div className='grid grid-cols-6 gap-4 p-5'>
+		<div className='grid grid-cols-7 gap-4 p-5'>
 			{Object.entries(units).map(([type, vehicles]) => {
 				const titles = {
 					pumps: 'Bombas',
-					rescuepumps: 'Bombas de rescate',
+					rescuepumps: 'Bombas y rescate',
 					rescue: 'Rescate',
 					hazmat: 'Hazmat',
-					tanker: 'Tanque',
-					tank: 'Cisterna'
+					tanker: 'Tanker',
+					tank: 'Cisterna',
+					command: 'Comandancia'
 				}
 
 				return (
@@ -35,7 +33,7 @@ export async function GridUnits() {
 						<h2 className='text-lg font-bold text-gray-400 mb-5'>
 							{titles[type as keyof typeof titles]}
 						</h2>
-						{vehicles.map(vehicle => (
+						{vehicles.map((vehicle: Vehicle) => (
 							<Unit
 								key={vehicle.id}
 								unit={vehicle}
