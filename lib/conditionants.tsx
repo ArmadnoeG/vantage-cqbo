@@ -1,6 +1,6 @@
 // for the color of the unit in the Unit component
-export const availability = (unit: string) => {
-	switch (unit) {
+export const availability = (estado: string) => {
+	switch (estado) {
 		case 'available':
 			return 'bg-green-500 text-black'
 		case 'not_available':

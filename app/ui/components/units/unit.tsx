@@ -1,8 +1,20 @@
 import type { Vehicle } from '@/lib/types'
 import { Cog } from 'lucide-react'
-import { availability } from '@/lib/conditionants'
 
 export default function Unit({ unit }: { unit: Vehicle }) {
+	const availability = (estado: string) => {
+		console.log('Estado recibido en availability:', estado, typeof estado)
+		switch (estado) {
+			case 'available':
+				return 'bg-green-500 text-black'
+			case 'not_available':
+				return 'bg-red-500 text-white'
+			case 'not_driver':
+				return 'bg-yellow-500 text-black'
+			default:
+				return 'bg-gray-500 text-white'
+		}
+	}
 	return (
 		<div
 			className={`${availability(unit.estado)} flex flex-col items-center justify-center  w-20 h-20 group relative cursor-pointer hover:scale-110 transition-all duration-300`}
