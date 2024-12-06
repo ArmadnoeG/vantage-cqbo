@@ -48,7 +48,7 @@ export default function ProfileManagement() {
 				<div
 					role='menú'
 					aria-label='menú perfil'
-					className={`absolute top-20 right-10 bg-white rounded-md w-[250px] overflow-hidden transition-all duration-300 ease-in-out ${
+					className={`absolute top-20 right-10 bg-white rounded-md w-[250px] overflow-hidden transition-all duration-300 ease-in-out z-50 ${
 						isOpen ? 'max-h-[400px]' : 'max-h-0'
 					}`}
 				>
