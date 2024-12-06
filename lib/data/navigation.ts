@@ -1,4 +1,4 @@
-import { CircleUser, Settings, BarChart } from 'lucide-react'
+import { CircleUser, Settings } from 'lucide-react'
 
 export const NAV_ITEMS = [
 	{
