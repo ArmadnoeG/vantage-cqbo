@@ -26,11 +26,11 @@ export default function ProfileManagement() {
 		<>
 			<div
 				ref={menuRef}
-				className='flex items-center gap-2 group hover:bg-white/10 h-full px-2'
+				className='flex items-center gap-2 group hover:bg-white/10 h-full px-2 text-sm'
 				onClick={() => setIsOpen(!isOpen)}
 			>
 				<div className='flex flex-col gap-1 items-end '>
-					<h3 className='text-white text-sm'>Bomberos Coquimbo</h3>
+					<h3 className='text-white '>Bomberos Coquimbo</h3>
 					<span className=' text-orange-300 text-xs  py-1 px-2 border-2 border-orange-300 rounded-full w-fit'>
 						Centralista
 					</span>
@@ -58,7 +58,7 @@ export default function ProfileManagement() {
 							return (
 								<li
 									key={item.label}
-									className=' text-base py-3 pl-4 border-b border-gray-500 w-full hover:text-blue-500 hover:bg-blue-500/10'
+									className=' py-3 pl-4 border-b border-gray-500 w-full hover:text-blue-500 hover:bg-blue-500/10'
 								>
 									<Link
 										href={item.href}
@@ -69,7 +69,7 @@ export default function ProfileManagement() {
 								</li>
 							)
 						})}
-						<li className='flex justify-between items-center py-3 hover:bg-blue-500/10 text-sm'>
+						<li className='flex justify-between items-center py-3 hover:bg-blue-500/10 '>
 							<p className='pl-4 flex items-center gap-2'>
 								Estado del servicio
 							</p>

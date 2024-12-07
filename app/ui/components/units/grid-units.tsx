@@ -13,35 +13,39 @@ export function GridUnits() {
 	}
 
 	return (
-		<div className='grid grid-cols-7 gap-4 p-5'>
-			{Object.entries(units).map(([type, vehicles]) => {
-				const titles = {
-					pumps: 'Bombas',
-					rescuepumps: 'Bombas y rescate',
-					rescue: 'Rescate',
-					hazmat: 'Hazmat',
-					tanker: 'Tanker',
-					tank: 'Cisterna',
-					command: 'Comandancia'
-				}
+		<>
+			<div
+				className={`grid grid-cols-7 gap-4 p-5 ${loading ? '' : 'animate-fade-in animate-duration-300 animate-linear '}`}
+			>
+				{Object.entries(units).map(([type, vehicles]) => {
+					const titles = {
+						pumps: 'Bombas',
+						rescuepumps: 'Bombas y rescate',
+						rescue: 'Rescate',
+						hazmat: 'Hazmat',
+						tanker: 'Tanker',
+						tank: 'Cisterna',
+						command: 'Comandancia'
+					}
 
-				return (
-					<div
-						key={type}
-						className='flex flex-col gap-2 border-x-2 border-gray-300 items-center'
-					>
-						<h2 className='text-lg font-bold text-gray-400 mb-5'>
-							{titles[type as keyof typeof titles]}
-						</h2>
-						{vehicles.map((vehicle: Vehicle) => (
-							<Unit
-								key={vehicle.id}
-								unit={vehicle}
-							/>
-						))}
-					</div>
-				)
-			})}
-		</div>
+					return (
+						<div
+							key={type}
+							className='flex flex-col gap-2 border-x-2 border-gray-300 items-center'
+						>
+							<h2 className='text-lg font-bold text-gray-400 mb-5'>
+								{titles[type as keyof typeof titles]}
+							</h2>
+							{vehicles.map((vehicle: Vehicle) => (
+								<Unit
+									key={vehicle.id}
+									unit={vehicle}
+								/>
+							))}
+						</div>
+					)
+				})}
+			</div>
+		</>
 	)
 }
