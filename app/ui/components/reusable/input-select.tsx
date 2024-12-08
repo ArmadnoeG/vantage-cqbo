@@ -41,7 +41,7 @@ export default function InputSelect({
 	}, [])
 
 	const handleSelect = (option: Options) => {
-		onChange?.(option.value)
+		onChange?.(option.label)
 		setIsOpen(false)
 	}
 	const filteredOptions = options?.filter(option => option.label !== value)
@@ -55,7 +55,7 @@ export default function InputSelect({
 					className={`flex items-center justify-between p-2 w-full ${isOpen ? 'text-blue-400' : ''}`}
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					{value}
+					{value || 'Selecciona una opción'}
 					<ChevronDown
 						className={`size-5 ${isOpen ? 'rotate-180 text-blue-400' : ''} transition-all duration-300 group-hover:text-blue-400`}
 					/>
@@ -82,7 +82,7 @@ export default function InputSelect({
 			<input
 				type='hidden'
 				name={id}
-				value={value}
+				value={options?.find(opt => opt.label === value)?.value || ''}
 			/>
 		</>
 	)

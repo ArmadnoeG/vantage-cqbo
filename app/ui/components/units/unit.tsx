@@ -1,9 +1,9 @@
-import type { Vehicle } from '@/lib/types'
+import { Vehicle } from '@/lib/types'
 import { Cog } from 'lucide-react'
 import { useState } from 'react'
 import ModalUnits from './dialog'
 
-export default function Unit({ unit }: { unit: Vehicle }) {
+export default function UnitCard({ unit }: { unit: Vehicle }) {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const availability = (estado: string) => {

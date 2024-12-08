@@ -8,10 +8,9 @@ export const FiretruckIcon = ({ className }: { className?: string }) => {
 			viewBox='0 0 24 24'
 			fill='none'
 			stroke='#374151'
-			stroke-width='1'
-			stroke-linecap='round'
-			stroke-linejoin='round'
-			class='icon icon-tabler icons-tabler-outline icon-tabler-firetruck'
+			strokeWidth='1'
+			strokeLinecap='round'
+			strokeLinejoin='round'
 		>
 			<path
 				stroke='none'

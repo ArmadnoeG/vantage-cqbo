@@ -1,12 +1,12 @@
 'use client'
 
-import Unit from './unit'
+import UnitCard from './unit'
 import { useUnits } from '@/lib/utils/hooks/useUnits'
-import { Units, Vehicle } from '@/lib/types'
+import type { Vehicle } from '@/lib/types'
 import LoadingBar from '@/app/ui/components/reusable/loading-bar'
 
 export function GridUnits() {
-	const { units, loading } = useUnits() as { units: Units; loading: boolean }
+	const { units, loading } = useUnits() as { units: Vehicle; loading: boolean }
 
 	if (loading) {
 		return <LoadingBar />
@@ -37,7 +37,7 @@ export function GridUnits() {
 								{titles[type as keyof typeof titles]}
 							</h2>
 							{vehicles.map((vehicle: Vehicle) => (
-								<Unit
+								<UnitCard
 									key={vehicle.id}
 									unit={vehicle}
 								/>

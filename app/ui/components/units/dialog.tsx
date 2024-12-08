@@ -1,16 +1,13 @@
-import { Vehicle } from '@/lib/types'
 import { availability } from '@/lib/conditionants'
 import FormModal from './form-modal'
+import { ModalProps, Unit, Vehicle } from '@/lib/types/index'
 
 const ModalUnits = ({
 	isOpen,
 	onClose,
 	data
-}: {
-	isOpen: boolean
-	onClose: () => void
-	data: Vehicle
-}) => {
+}: Omit<ModalProps, 'data'> & { data: Unit | Vehicle }) => {
+	const unit = data.nombre.trim()
 	if (!isOpen) return null
 
 	addEventListener('keydown', e => {
@@ -33,7 +30,12 @@ const ModalUnits = ({
 				>
 					<h2 className='text-white text-2xl font-bold'>{data.nombre}</h2>
 				</div>
-				<FormModal state={data.estado} />
+				{'modelVehicle' in data && (
+					<FormModal
+						state={data}
+						unit={unit}
+					/>
+				)}
 			</div>
 		</article>
 	)
